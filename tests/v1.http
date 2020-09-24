@@ -1,14 +1,20 @@
 @base_url = http://localhost:6000
+@actk = {{login.response.body.token}}
 
 ###
 GET {{base_url}} HTTP/1.1
 
-###
-@login = login
-POST {{base_url}}/users/{{login}} HTTP/1.1
+######### login
+# @name login
+POST {{base_url}}/users/login HTTP/1.1
 Content-Type: application/json
 
 {
-    "username" : "testee",
-    "password" : "1122335566"
+    "username" : "a",
+    "password" : "1"
 }
+
+###### get invoice
+GET  {{base_url}}/get/invoice HTTP/1.1
+Content-Type: application/json
+actk: {{actk}}
