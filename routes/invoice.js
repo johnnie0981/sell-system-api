@@ -2,7 +2,7 @@ var dbconn = require("../controllers/db_connect");
 
 function get_invoice(req, res) {
   dbconn.query(
-    "SELECT tp.proid, tp.proname, tc.catename , ts.sale_price, ts.qty, tu.unitname FROM tb_product tp , tb_stock ts, tb_unit tu, tb_category tc WHERE tp.proid = ts.proid AND ts.unitid = tu.unitid AND tc.cateid = tp.cateid ORDER BY tp.cateid",
+    "select tp.proid, tp.proname, tp.qty, tu.unitname, tp.order_price, tp.wholesale_price from tb_product tp, tb_unit tu where tp.unitid = tu.unitid",
     (err, resu) => {
       if (err) return res.status(400).json(err);
       return res.status(201).json(resu);
