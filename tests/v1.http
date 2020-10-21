@@ -24,3 +24,12 @@ GET {{base_url}}/get/invoice_detail/IN10004 HTTP/1.1
 Content-Type: application/json
 actk: {{actk}}
 
+### update status 
+PUT {{base_url}}/update_status/invoice HTTP/1.1
+Content-Type: application/json
+actk: {{actk}}
+
+{
+    "invid" : "IN10004"
+}
+
