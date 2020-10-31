@@ -1,4 +1,4 @@
-@base_url = http://localhost:6000
+@base_url = http://localhost:3005
 @actk = {{login.response.body.token}}
 
 ###
@@ -20,7 +20,7 @@ Content-Type: application/json
 actk: {{actk}}
 
 ### get invioce_detail
-GET {{base_url}}/get/invoice_detail/IN10004 HTTP/1.1
+GET {{base_url}}/get/invoice_detail/IN10007 HTTP/1.1
 Content-Type: application/json
 actk: {{actk}}
 
@@ -30,6 +30,6 @@ Content-Type: application/json
 actk: {{actk}}
 
 {
-    "invid" : "IN10004"
+    "invid" : "IN10007"
 }
 
