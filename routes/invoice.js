@@ -25,4 +25,15 @@ function get_invioce_detail(req, res) {
   );
 }
 
-module.exports = { get_invoice, get_invioce_detail };
+function update_status(req, res) {
+  dbconn.query(
+    "update tb_invoice set status = 2 where invid = ?",
+    [req.body.invid],
+    (err, resu) => {
+      if (err) return res.status(500).json(err);
+      return res.json(resu);
+    }
+  );
+}
+
+module.exports = { get_invoice, get_invioce_detail, update_status };
